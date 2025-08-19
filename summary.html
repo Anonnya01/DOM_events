@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Summary</title>
+  </head>
+  <body>
+    <h1>DOM Event summary</h1>
+    <input id="inputs" type="text" placeholder="Your Name" />
+    <button onclick="addName()">Update Name</button>
+    <button id="btn">add dream</button>
+    <div id="name-box"></div>
+    <script>
+      function addName() {
+        const nameInput = document.getElementById("inputs");
+        const newName = nameInput.value;
+        const nameBox = document.getElementById("name-box");
+        const p = document.createElement("p");
+        p.innerText = newName;
+
+        nameBox.appendChild(p);
+        nameInput.value = "";
+      }
+
+      //   add event listener
+      document.getElementById("btn").addEventListener("click", function () {
+        document.body.style.backgroundColor = "lightgreen";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Events</title>
+    <style>
+        body{
+            border: 2px solid green;
+            margin: 5px;
+            background-color: antiquewhite;
+        }
+        section{
+            border:2px solid lightgreen;
+            margin: 10px;
+        }
+       ol{
+            border: 2px solid red;
+            margin: 4px;
+        }
+        li{
+            border: 2px solid lawngreen;
+            margin: 2px;
+        }
+      
+    </style>
+</head>
+<body id="body">
+    <h1>Explore Bubble Events</h1>
+    <section id="list-box">
+        <h3>List of wish</h3>
+        <ol id="list">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">A, unde!</li>
+            <li id="item-3">Recusandae, autem.</li>
+            <li id="item-4">Temporibus, error!</li>
+            <li id="item-5">Dicta, maiores!</li>
+            <li id="item-6">Vero, facilis.</li>
+        </ol>
+    </section>
+    <script>
+        // list item to click handler
+        document.getElementById('item-2')
+        .addEventListener('click', function(event){
+            console.log('item click');
+            event.stopPropagation()
+            // stops here
+            event.stopImmediatePropagation()
+        })
+        // ol item to click handler
+        document.getElementById('list')
+        .addEventListener('click', function(){
+            console.log('ol click');
+            
+        })
+        // section item to click handler
+        document.getElementById('list-box')
+        .addEventListener('click', function(){
+            console.log('section click');
+            
+        })
+        // body item to click handler
+        document.getElementById('body')
+        .addEventListener('click', function(){
+            console.log('body click');
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegate Events</title>
+  </head>
+  <body>
+    <h1>Exploring Event Delegate</h1>
+    <ol id="item-list">
+      <li class="item">my items name-A</li>
+      <li class="item">my items name-B</li>
+      <li class="item">my items name-C</li>
+      <li class="item">my items name-D</li>
+      <li class="item">my items name-E</li>
+      <li class="item">my items name-F</li>
+    </ol>
+    <button id="btn">Add New Item</button>
+    <script>
+      // removing with event
+      // const items =document.getElementsByClassName('item')
+      // for(const item of items){
+      //   item.addEventListener('click', function(event){
+      // //    console.log(event.target.parentNode);
+      //    event.target.parentNode.removeChild(event.target)
+      //   })
+
+      // }
+
+      //   removing and addnig
+      document
+        .getElementById("item-list")
+        .addEventListener("click", function (event) {
+          console.log(event.target);
+          event.target.parentNode.removeChild(event.target);
+        });
+
+      // add new item
+
+      document.getElementById("btn").addEventListener("click", function () {
+        const ol = document.getElementById("item-list");
+
+        //    new item
+        const li = document.createElement("li");
+        li.classList.add("item");
+        li.innerText = "New items";
+        // add
+        ol.appendChild(li);
+      });
+    </script>
+  </body>
+</html>
