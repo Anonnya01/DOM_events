@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment</title>
+    <style>
+      body {
+        background-color: lightpink;
+      }
+      h1,
+      h3 {
+        color: lavenderblush;
+      }
+      .comment {
+        background-color: hotpink;
+        border: 3px solid palevioletred;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        color: indigo;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My comment Box.Write your thoughts!</h1>
+    <section>
+      <h3>All comments are here:</h3>
+      <div id="comment-box">
+        <p class="comment">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam,
+          cupiditate quo enim assumenda saepe officiis temporibus expedita
+          veritatis doloremque incidunt?
+        </p>
+        <p class="comment">
+          Expedita reprehenderit nesciunt, quia sapiente culpa aliquam
+          necessitatibus voluptatibus. Ipsum ea, maxime architecto dolorum
+          commodi fugiat nostrum amet minima pariatur.
+        </p>
+        <p class="comment">
+          Optio, nam? Quas quod quibusdam ea! Excepturi, illo incidunt, corporis
+          at repellendus iste cumque ex corrupti minus numquam non
+          exercitationem?
+        </p>
+      </div>
+      <!-- <form> -->
+      <textarea name="" id="comment-t" cols="60" rows="5"></textarea>
+      <br />
+      <button id="btn-post">Post</button>
+      <!-- </form> -->
+    </section>
+    <script>
+      // step 1
+      document
+        .getElementById("btn-post")
+        .addEventListener("click", function () {
+          console.log("clicked");
+
+          //   step 2
+
+          const comntText = document.getElementById("comment-t");
+          const newComnt = comntText.value;
+
+          //    step 3
+
+          const comntBox = document.getElementById("comment-box");
+          console.log(comntBox);
+
+          //   step 4
+
+          const comntpost = document.createElement("p");
+          comntpost.classList.add("comment");
+          comntpost.innerText = newComnt;
+
+          // step 5
+
+          comntBox.appendChild(comntpost);
+
+        //   step 6
+       
+        comntText.value ='';
+
+        });
+    </script>
+  </body>
+</html>
