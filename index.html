@@ -7,6 +7,7 @@
   </head>
   <body>
     <h1>DOM events</h1>
+    <!-- option one event handler -->
     <button onclick="console.log(7)">Click Me</button>
     <button
       onclick="console.log(26);
@@ -14,9 +15,47 @@
     >
       Continue
     </button>
-    <button onclick="console.log('hello');
-    ">Press Me</button>
+    <button
+      onclick="console.log('hello');
+    "
+    >
+      Press Me
+    </button>
     <input type="text" />
+    <br />
+    <!-- option 2 event handler -->
+    <button onclick="makeYellow()">Yellow</button>
+    <button onclick="makePink()">Pink</button>
+    <br />
+
+    <!-- option 3 event handler -->
+
+    <button id="btn-green">Green</button>
+    <button id="btn-sky">skyblue</button>
+
+    <br />
+
+    <!-- option 4---- addEventListener -->
+    <button id="btn-lavender">lavender</button>
+    <button id="btn-gray">Gray</button>
+    <button id="btn-aqua">aqua</button>
+    <script>
+      //  1. getElementById.addEventListener--- 04-----//
+      // addEventListener('event type',handler)
+      
+      document
+        .getElementById("btn-lavender")
+        .addEventListener("mouseover", function lavender() {
+          document.body.style.backgroundColor = "lavender";
+        });
+
+      document
+        .getElementById("btn-gray")
+        .addEventListener("click", function () {
+          document.body.style.backgroundColor = "gray";
+        });
+    </script>
+
     <script src="js/events.js"></script>
   </body>
 </html>
