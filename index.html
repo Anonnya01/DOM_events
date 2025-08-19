@@ -42,11 +42,16 @@
     <script>
       //  1. getElementById.addEventListener--- 04-----//
       // addEventListener('event type',handler)
-      
+
       document
         .getElementById("btn-lavender")
-        .addEventListener("mouseover", function lavender() {
+        .addEventListener("mouseout", function lavender() {
           document.body.style.backgroundColor = "lavender";
+        });
+      document
+        .getElementById("btn-aqua")
+        .addEventListener("mouseover", function aqua() {
+          document.body.style.backgroundColor = "aqua";
         });
 
       document
