@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More event</title>
+  </head>
+  <body>
+    <button id="btn-shin">Shin-Chan</button>
+    <input id="user-name" placeholder="Your Name" type="text" />
+    <input id="user-email" placeholder="Your Email" type="text" />
+    <script>
+    //   document
+    //     .getElementById("user-name")
+    //     .addEventListener("keydown", function () {
+    //       console.log("user typing now" ,event.target.value);
+    //     });
+      document
+        .getElementById("user-name")
+        .addEventListener("keyup", function () {
+          console.log("user typing now" ,event.target.value);
+        });
+    </script>
+    <script src="js/more.js"></script>
+  </body>
+</html>
